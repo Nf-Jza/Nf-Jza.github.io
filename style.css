@@ -1,0 +1,307 @@
+* {
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ===== Panel ===== */
+.panel {
+  display: flex;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.452);
+  max-width: 840px;
+  min-width: 420px;
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 10px;
+  color: #334155;
+}
+.panel1, .panel2 {
+  width: 420px;
+  flex: 1;
+  padding: 10px;
+}
+.panel1container {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  height: 100%;
+}
+
+button {
+  outline: none;
+}
+.icon-close {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  align-items: right;
+  fill: #696969;
+}
+.icon-minimize {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  align-items: right;
+  fill: #696969;
+}
+.title-btn {
+  display: flex;
+  gap: 5px;
+}
+.icon-btn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.icon-btn svg{
+  pointer-events: bounding-box;
+}
+.icon-minimize:hover{
+  fill: #c2c2c2;
+}
+.icon-close:hover{
+  fill: #bd0000;
+}
+
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.confirm-box {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.452);
+  background: #ffffff;
+  padding: 10px 15px;
+  align-items: center;
+  align-content: center;
+  border-radius: 15px;
+  justify-content: center;
+}
+.confirm-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+#confirm-yes, #confirm-no {
+  background: #ebebeb;
+  margin: 5px 5px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#confirm-yes:hover, #confirm-no:hover {
+  filter: brightness(0.95);
+}
+.hidden {
+  display: none;
+}
+
+
+
+/* ===== Header ===== */
+.panel-header {
+  align-items: center;
+  display: flex;
+  margin-bottom: 18px;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.title {
+  justify-content: left;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #0f172a;
+}
+
+.bias-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #0f172a;
+}
+
+/* ===== Account Card ===== */
+.account {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ===== Controls ===== */
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.controls label {
+  font-size: 12px;
+  color: #64748b;
+  align-content: center;
+}
+
+.controls input {
+  margin-top: 6px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* ===== Lot Buttons ===== */
+.lot-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.lot-buttons button {
+  height: 30px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.resetLot {
+  grid-column: 1 / -1;
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.decreaseLot {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.increaseLot {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.lot-buttons button:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Hover / Active */
+.greenHover:hover {
+  background: #bbf7d0;
+}
+
+.redHover:hover {
+  background: #fecaca;
+}
+
+.redClicked:active {
+  background: #fca5a5;
+}
+
+.greenClicked:active {
+  background: #86efac;
+}
+
+.resetLot:hover {
+  background: #cbd5f5;
+}
+
+.resetLot:active {
+  background: #c7d2fe;
+}
+
+/* ===== Trade Status ===== */
+.tradeStatus {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.tradeStatus button {
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* ===== Divider ===== */
+.horizontal-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 25px 0;
+}
+
+/* ===== Actions / Bias ===== */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.biasBtnBuy {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.biasBtnNeutral {
+  background: #a8b0ff;
+  color: #92400e;
+}
+
+.biasBtnSell {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.actions button:hover {
+  filter: brightness(0.97);
+}
+
+.actions button:active {
+  filter: brightness(0.92);
+}
