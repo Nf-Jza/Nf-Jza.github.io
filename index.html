@@ -4,10 +4,279 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nafi | Creative Developer</title>
-    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --bg-deep-midnight: #0f172a;
+    --accent-indigo: #6366f1;
+    --accent-cyan: #22d3ee;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --glass-bg: rgba(30, 41, 59, 0.7);
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-deep-midnight);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.hub {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.hub.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aurora-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, var(--bg-deep-midnight), #1e293b);
+    filter: blur(100px);
+}
+
+.hero {
+    text-align: center;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--text-primary), var(--accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+.dual-gate {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.gate-card {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.gate-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(34, 211, 238, 0.2);
+}
+
+.gate-preview {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6) blur(2px);
+    transition: var(--transition-smooth);
+}
+
+.gate-card:hover .gate-preview {
+    filter: brightness(0.8) blur(0);
+}
+
+.gate-content {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.hub-nav {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+}
+
+.nav-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.nav-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.filter-bar {
+    display: flex;
+    gap: 1rem;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.filter-btn.active {
+    color: var(--accent-cyan);
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 1.5rem;
+    padding: 10rem 2rem 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.project-card.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    transform: translateY(100%);
+    transition: var(--transition-smooth);
+}
+
+.project-card:hover .project-overlay {
+    transform: translateY(0);
+}
+
+.editorial-stream {
+    width: 100%;
+    max-width: 800px;
+    margin: 10rem auto 2rem;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.article-card {
+    padding: 2rem;
+    border-radius: 24px;
+    background: var(--glass-bg);
+    border: 1px solid rgba(255,255,255,0.05);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.article-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.article-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.article-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--accent-cyan);
+    font-weight: 600;
+}
+
+.search-container input {
+    background: var(--glass-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    outline: none;
+}
+
+.search-container input:focus {
+    border-color: var(--accent-cyan);
+}
+
+.project-card, .article-card {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.project-card.revealed, .article-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+    </style>
 </head>
 <body>
     <div id="app">
@@ -59,6 +328,170 @@
             </div>
         </section>
     </div>
-    <script src="script.js"></script>
+    <script>
+const hubs = document.querySelectorAll('.hub');
+const gates = document.querySelectorAll('.gate-card');
+
+function switchHub(targetId) {
+    hubs.forEach(hub => {
+        hub.classList.remove('active');
+        if (hub.id === targetId) {
+            hub.classList.add('active');
+        }
+    });
+}
+
+gates.forEach(gate => {
+    gate.addEventListener('click', () => {
+        const target = gate.getAttribute('data-target');
+        switchHub(target);
+    });
+});
+
+const projects = [
+    {
+        title: "E-Commerce Engine",
+        category: "web",
+        size: "large",
+        img: "https://images.unsplash.com/photo-1557821552-17B862a8827a?q=80&w=800&auto=format&fit=crop",
+        hook: "High-performance storefront with real-time inventory."
+    },
+    {
+        title: "Analytics Dashboard",
+        category: "web",
+        size: "small",
+        img: "https://images.unsplash.com/photo-1551288049-bebda4e38a71?q=80&w=800&auto=format&fit=crop",
+        hook: "Data visualization for enterprise SaaS."
+    },
+    {
+        title: "Generative Art Studio",
+        category: "creative",
+        size: "small",
+        img: "https://images.unsplash.com/photo-1547826039-adc9ed5f7637?q=80&w=800&auto=format&fit=crop",
+        hook: "Algorithmic beauty using p5.js."
+    },
+    {
+        title: "Task Orchestrator",
+        category: "web",
+        size: "small",
+        img: "https://images.unsplash.com/photo-1518432031352-d6fc55a8ce75?q=80&w=800&auto=format&fit=crop",
+        hook: "Distributed task runner for cloud infra."
+    }
+];
+
+function renderProjects(filter = "all") {
+    const grid = document.querySelector('.bento-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    const filtered = filter === "all"
+        ? projects
+        : projects.filter(p => p.category === filter);
+
+    filtered.forEach(p => {
+        const card = document.createElement('div');
+        card.className = `project-card ${p.size}`;
+        card.innerHTML = `
+            <img src="${p.img}" alt="${p.title}">
+            <div class="project-overlay">
+                <h3>${p.title}</h3>
+                <p>${p.hook}</p>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelector('.filter-btn.active').classList.remove('active');
+        btn.classList.add('active');
+        renderProjects(btn.getAttribute('data-filter'));
+    });
+});
+
+const articles = [
+    {
+        title: "The Future of Generative UI",
+        excerpt: "Exploring how AI is reshaping the way we think about interface design.",
+        category: "Architecture",
+        readTime: "5 min read"
+    },
+    {
+        title: "Mastering CSS Grid",
+        excerpt: "A deep dive into the most powerful layout system in the browser.",
+        category: "Tutorial",
+        readTime: "8 min read"
+    },
+    {
+        title: "Why I switched to Neovim",
+        excerpt: "The journey from IDEs to a modal editing workflow.",
+        category: "Personal",
+        readTime: "4 min read"
+    }
+];
+
+function renderArticles(filter = "") {
+    const stream = document.querySelector('.editorial-stream');
+    if (!stream) return;
+    stream.innerHTML = '';
+
+    const filtered = articles.filter(a =>
+        a.title.toLowerCase().includes(filter.toLowerCase()) ||
+        a.excerpt.toLowerCase().includes(filter.toLowerCase())
+    );
+
+    filtered.forEach(a => {
+        const card = document.createElement('div');
+        card.className = 'article-card';
+        card.innerHTML = `
+            <h3>${a.title}</h3>
+            <p>${a.excerpt}</p>
+            <div class="article-meta">
+                <span>${a.category}</span>
+                <span>•</span>
+                <span>${a.readTime}</span>
+            </div>
+        `;
+        stream.appendChild(card);
+    });
+}
+
+document.getElementById('library-search')?.addEventListener('input', (e) => {
+    renderArticles(e.target.value);
+});
+
+function initHubs() {
+    renderProjects();
+    renderArticles();
+
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            switchHub(btn.getAttribute('data-target'));
+        });
+    });
+}
+
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+        }
+    });
+}, observerOptions);
+
+function observeElements() {
+    document.querySelectorAll('.project-card, .article-card').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+initHubs();
+observeElements();
+    </script>
 </body>
 </html>
