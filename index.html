@@ -3,275 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+    <title>Nafi | Creative Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">John Doe</a>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm <span class="highlight">John Doe</span></h1>
-                <p class="hero-subtitle">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
-                <p class="hero-description">
-                    I build exceptional digital experiences that combine clean code with intuitive design. 
-                    Passionate about creating scalable solutions and continuously learning new technologies.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#" class="btn btn-secondary">Download CV</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="image-placeholder">👨‍💻</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about section" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>
-                    Hello! I'm a passionate Full Stack Developer with over 5 years of experience building 
-                    web applications. I enjoy turning complex problems into simple, beautiful, and intuitive designs.
-                </p>
-                <p>
-                    My journey started when I edited my first CSS file, and since then, I've been hooked on 
-                    creating things for the web. I value clean code, user-centric design, and continuous learning.
-                </p>
-                <p>
-                    When I'm not coding, you can find me exploring new technologies, contributing to open-source 
-                    projects, or enjoying a good cup of coffee while reading tech blogs.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="experience section" id="experience">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Senior Full Stack Developer</h3>
-                        <p class="timeline-company">Tech Corp Inc. | 2021 - Present</p>
-                        <p class="timeline-description">
-                            Leading development of scalable web applications using React, Node.js, and AWS. 
-                            Mentoring junior developers and implementing best practices for code quality.
-                        </p>
-                        <ul class="timeline-list">
-                            <li>Reduced page load time by 40% through optimization</li>
-                            <li>Led a team of 5 developers in agile environment</li>
-                            <li>Implemented CI/CD pipelines improving deployment efficiency</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Full Stack Developer</h3>
-                        <p class="timeline-company">StartUp Solutions | 2019 - 2021</p>
-                        <p class="timeline-description">
-                            Developed and maintained multiple client projects using modern JavaScript frameworks. 
-                            Collaborated with designers to create responsive and accessible interfaces.
-                        </p>
-                        <ul class="timeline-list">
-                            <li>Built 15+ custom web applications for diverse clients</li>
-                            <li>Integrated third-party APIs and payment systems</li>
-                            <li>Improved test coverage from 40% to 85%</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Junior Web Developer</h3>
-                        <p class="timeline-company">Digital Agency | 2018 - 2019</p>
-                        <p class="timeline-description">
-                            Started my professional career building websites and learning industry standards. 
-                            Worked with HTML, CSS, JavaScript, and PHP on various projects.
-                        </p>
-                        <ul class="timeline-list">
-                            <li>Developed responsive websites for 20+ clients</li>
-                            <li>Collaborated with cross-functional teams</li>
-                            <li>Learned agile methodologies and version control</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills section" id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Frontend</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Vue.js</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">Tailwind CSS</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Backend</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Django</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Redis</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Tools & Others</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">CI/CD</span>
-                        <span class="skill-tag">Jest</span>
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Agile</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects section" id="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">🛒</div>
-                    <div class="project-content">
-                        <h3 class="project-title">E-Commerce Platform</h3>
-                        <p class="project-description">
-                            A full-featured online store with cart functionality, payment integration, 
-                            and admin dashboard. Built with React, Node.js, and Stripe.
-                        </p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>Stripe</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
+    <div id="app">
+        <section id="landing" class="hub active">
+            <div class="aurora-bg"></div>
+            <div class="hero">
+                <h1>Hi, I'm Nafi.</h1>
+                <p class="subtitle">Creative Developer & Tech Storyteller.</p>
+                <div class="dual-gate">
+                    <div class="gate-card" data-target="gallery">
+                        <div class="gate-preview" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop')"></div>
+                        <div class="gate-content">
+                            <span>Explore the Work</span>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">📊</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Analytics Dashboard</h3>
-                        <p class="project-description">
-                            Real-time data visualization dashboard for tracking business metrics. 
-                            Features interactive charts, filters, and export capabilities.
-                        </p>
-                        <div class="project-tech">
-                            <span>Vue.js</span>
-                            <span>D3.js</span>
-                            <span>Python</span>
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">💬</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Chat Application</h3>
-                        <p class="project-description">
-                            Real-time messaging app with rooms, direct messages, and file sharing. 
-                            Implemented WebSocket connections and end-to-end encryption.
-                        </p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Socket.io</span>
-                            <span>Express</span>
-                            <span>Redis</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
+                    <div class="gate-card" data-target="library">
+                        <div class="gate-preview" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800&auto=format&fit=crop')"></div>
+                        <div class="gate-content">
+                            <span>Read the Thoughts</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="contact section" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p class="contact-description">
-                    I'm currently open to new opportunities and collaborations. 
-                    Whether you have a question or just want to say hi, feel free to reach out!
-                </p>
-                <a href="mailto:john.doe@example.com" class="email-link">john.doe@example.com</a>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="GitHub">
-                        <span>GitHub</span>
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Twitter">
-                        <span>Twitter</span>
-                    </a>
+        <section id="gallery" class="hub">
+            <nav class="hub-nav">
+                <button class="nav-btn" data-target="landing">← Back to Portal</button>
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Apps</button>
+                    <button class="filter-btn" data-filter="creative">Creative</button>
                 </div>
+            </nav>
+            <div class="bento-grid">
+                <!-- Project items will be injected here by JS -->
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 John Doe. All rights reserved.</p>
-        </div>
-    </footer>
-
+        <section id="library" class="hub">
+            <nav class="hub-nav">
+                <button class="nav-btn" data-target="landing">← Back to Portal</button>
+                <div class="search-container">
+                    <input type="text" id="library-search" placeholder="Search thoughts...">
+                </div>
+            </nav>
+            <div class="editorial-stream">
+                <!-- Articles will be injected here by JS -->
+            </div>
+        </section>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
